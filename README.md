@@ -2,6 +2,8 @@
 
 A per-file cyclomatic-complexity budget gate for Python codebases: declare how complex any single function in a file may be, get an over-budget report, and let CI fail on the delta. Teams watching entropy creep into hot files — legacy modules, shared kernels — need a budget that is written down, versioned, and enforced, not re-argued per review. If your codebase is small or already covered by a strict style regime, skip this. Confidence: [High ≥80%] on the McCabe-style counting and CI exit-code behavior; [Medium] that per-function (not per-module) budgets match your team's mental model. As of 2026-10-11.
 
+<p align="center"><img src="docs/demo.gif" alt="demo" width="720"></p>
+
 ## Problem
 
 Complexity grows one `if` at a time, and each individual change looks harmless. By the time someone notices, a 400-line function is load-bearing and untestable. Retroactive refactors are expensive and political; the missing piece is an explicit, enforceable budget: "no function in this file may exceed cyclomatic complexity N", checked in CI, with an escape hatch that is itself visible.
